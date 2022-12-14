@@ -8,6 +8,40 @@
   <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
+  <ul>
+    <li>
+
+    </li>
+  </ul>
   <main></main>
+  <script>
+function fetchBooks() {
+  // To pass the tests, don't forget to return your fetch!
+  fetch("https://anapioficeandfire.com/api/books")
+  .then(responsse => Response.json())
+  .then(data => renderBooks(data))
+  .catch(error => console.error(error))
+
+  const books = [
+    {
+      title: "The River and the Source",
+      author: "melvin" 
+
+    }
+  ]
+  function renderBooks(books) {
+   const bookList = document.createElement("ul");
+     for (const books of books) {
+      bookItem.InnerText = `${book.title} by ${book.author}`;
+      bookList.appendChild(bookItem);
+     }
+     document.body.appendChild(bookList);
+  }
+  
+  
+  }
+  render(books);
+
+  </script>
 </body>
 </html>
